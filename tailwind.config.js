@@ -13,20 +13,21 @@ export default {
         extend: {
             fontFamily: {
                 sans: ["Figtree", ...defaultTheme.fontFamily.sans],
+                
             },
             height: {
                 "10vh": "10vh", //1º nombre de la clase | 2º valor de la clase
                 "15vh": "15vh",
                 "65vh": "65vh",
             },
-            color: {
-                header: "#6915C2",
-                footer: "#1531BE",
-                main: "#9F15BE",
-                nav: "#2E15BE",
+            colors: {
+                header: "#574973",
+                footer: "#F2C5BB",
+                main: "#B2A0D9",
+                nav: "#7C68A6",
             },
         },
     },
 
-    plugins: [forms],
+    plugins: [forms, require("daisyui")],
 };

@@ -13,7 +13,9 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::view_("main", "main");
+Route::view("main", "main");
+Route::view("about", "about");
+
 Route::get('/', function () {
     return view('welcome');
 });
