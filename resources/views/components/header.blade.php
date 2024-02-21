@@ -1,4 +1,4 @@
-<header class="h-15vh bg-header flex flex-row justify-between p-5 item-center text-white">
+<header class="h-15vh bg-header flex flex-row justify-between p-5 item-center text-white" style="font-family: comicsans">
   <img src="{{asset('img/abf8fce6-438f-4ac3-9719-06e2993524d5.jpeg')}}" alt="Holy Moly">
   <h1 class="text-5xl py-5">Gestión Laravel</h1>
   @guest
