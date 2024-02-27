@@ -9,6 +9,12 @@
           quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
         <button class="btn btn-primary">Get Started</button>
       </div>
+      <label class="swap swap-flip text-9xl">
+  <input type="checkbox" class="hidden" />
+  
+  <div class="swap-on">👹</div>
+  <div class="swap-off">🤠</div>
+</label>
     </div>
   </div>
 </x-layouts.layout>

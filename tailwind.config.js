@@ -13,7 +13,6 @@ export default {
         extend: {
             fontFamily: {
                 sans: ["Figtree", ...defaultTheme.fontFamily.sans],
-                
             },
             height: {
                 "10vh": "10vh", //1º nombre de la clase | 2º valor de la clase
@@ -25,6 +24,7 @@ export default {
                 footer: "#F2C5BB",
                 main: "#B2A0D9",
                 nav: "#7C68A6",
+                placeholder: "#404040",
             },
         },
     },
