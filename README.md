@@ -1,4 +1,4 @@
-## Iniciar la app
+# Iniciar la app
 ```bash
 docker compose up -d
 ```
@@ -9,7 +9,7 @@ npm run dev
 php artisan serve &
 ```
 
-## Creando un CRUD para profesores
+# Creando un CRUD para profesores (migración)
 Creo un ecosistema
 ```bash
 php artisan make:model Profesor --all
@@ -46,18 +46,22 @@ Añado dentro de $this ProfesorSeeder::class
 php artisan migrate --seed
 ```
 
+# Crear una nueva migración
+```bash
+php artisan make:model Idioma --all
+```
+```bash
+php artisan migrate
+o
+php artisan migrate:fresh --seed (crea nuevos valores)
+```
+localhost:8080 (alumno alumno)
 
 
 
 
 
-
-
-
-
-
-<!-- <br>
-
+<!-- 
 ```bash
 php artisan make:migration profesores --create=profesores
 ``` -->

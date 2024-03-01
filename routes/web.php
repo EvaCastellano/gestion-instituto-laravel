@@ -5,12 +5,7 @@ use App\Http\Controllers\AlumnoController;
 use App\Http\Controllers\ProfesorController;
 
 Route::view("main", "main");
-/* Route::get("main", function () {
-    return view("main");
-});
-Route::get("main", [MainController::class => "index"]);
 
- */
 Route::view("about", "about");
 
 Route::resource("alumnos", AlumnoController::class);
@@ -18,7 +13,7 @@ Route::resource("profesores", ProfesorController::class);
 
 Route::get('/', function () {
     return view('main');
-});
+})->name("index");
 
 Route::get('/dashboard', function () {
     return view('dashboard');

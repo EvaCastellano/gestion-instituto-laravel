@@ -10,8 +10,8 @@ class ProfesorController extends Controller
 {
     public function index()
     {
-        $profesor = Profesor::all();
-        return view('profesores.listado', ["profesores" => $profesor]);
+        $profesores = Profesor::all();
+        return view('profesores.listado', ["profesores" => $profesores]);
     }
     public function create()
     {

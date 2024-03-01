@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+#td-hover:hover {
+  background-color: #ac92e4;
+}
