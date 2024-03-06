@@ -33,7 +33,9 @@ class AlumnoController extends Controller
 
     public function show(Alumno $alumno)
     {
-        //
+        $alumnos = Alumno::paginate(5);
+        $page = request::get('page')?? 1;
+        return view('alumnos.show', compact('alumno'));
     }
 
     public function edit(Alumno $alumno)

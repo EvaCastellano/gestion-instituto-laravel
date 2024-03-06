@@ -25,14 +25,12 @@
       </thead>
       @foreach($alumnos as $alumno)
       <tbody class="text-black">
-        <tr id="td-hover">
+        <tr id="td-hover" onClick="editar_alumno({{$alumno->id}})">
           <td class="font-semibold">{{$alumno->nombre}}</td>
           <td>{{$alumno->apellido}}</td>
           <td>{{$alumno->direccion}}</td>
           <td>{{$alumno->telefono}}</td>
           <td>{{$alumno->email}}</td>
-
-
 
             <!-- BOTON EDIT -->
           <td>
@@ -65,5 +63,12 @@
     </table>
     <!-- BOTONES NEXT Y PREVIOUS -->
     {{$alumnos->links("vendor.pagination.mipaginacion")}}
+
+    <script>
+    function editar_alumno(id) {
+      window.location=`http://localhost:8000/alumnos/${id}` 
+    }
+  </script>
+
   </div>
 </x-layouts.layout>

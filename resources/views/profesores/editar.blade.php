@@ -1,6 +1,6 @@
 <x-layouts.layout>
   <div class="flex text-black py-6 justify-center overflow-x-auto max-h-full">
-    <form action="/profesores/{{$profesor->id}}" method="post">
+    <form action="{{route('profesores.update',[$profesor->id,'page'=>$page])}}" method="post">
       @csrf
       @method('PUT')
       <label class="form-control w-full max-w-xs">
@@ -15,6 +15,13 @@
           <span class="label-text text-black">Apellido</span>
         </div>
         <input type="text" value="{{$profesor->apellido}}" name="apellido"
+          class="input input-bordered w-full max-w-xs bg-nav rounded text-white" />
+      </label>
+      <label class="form-control w-full max-w-xs">
+        <div class="label">
+          <span class="label-text text-black">DNI</span>
+        </div>
+        <input type="text" value="{{$profesor->dni}}" name="dni"
           class="input input-bordered w-full max-w-xs bg-nav rounded text-white" />
       </label>
       <label class="form-control w-full max-w-xs">

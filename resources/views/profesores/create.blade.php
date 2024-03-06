@@ -23,6 +23,15 @@
       @endforeach
       <label class="form-control w-full max-w-xs">
         <div class="label">
+          <span class="label-text text-black">DNI</span>
+        </div>
+      </label>
+      <input type="text" :value="{{old('dni')}}" name="dni" class="input input-bordered w-full max-w-xs bg-nav rounded text-white" />
+      @foreach($errors->get('dni') as $error)  
+      <p class="text-red-500 text-sm">{{$error}}</p>
+      @endforeach
+      <label class="form-control w-full max-w-xs">
+        <div class="label">
           <span class="label-text text-black">Email</span>
         </div>
       </label>

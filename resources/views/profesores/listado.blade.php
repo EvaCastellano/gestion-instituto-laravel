@@ -17,6 +17,7 @@
           <th>
             Apellido
           </th>
+          <th>DNI</th>
           <th>
             Email
           </th>
@@ -32,6 +33,7 @@
         <tr id="td-hover">
           <td class="font-semibold">{{$profesor->nombre}}</td>
           <td>{{$profesor->apellido}}</td>
+          <td>{{$profesor->dni}}</td>
           <td>{{$profesor->email}}</td>
           <td>{{$profesor->departamento}}</td>
 
@@ -66,6 +68,7 @@
       </tbody>
       @endforeach
     </table>
+    {{$profesores->links("vendor.pagination.mipaginacion")}}
   </div>
   <script>
     function confirmDelete(event, button) {

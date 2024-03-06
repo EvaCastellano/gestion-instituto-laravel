@@ -5,13 +5,15 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreProfesorRequest;
 use App\Http\Requests\UpdateProfesorRequest;
 use App\Models\Profesor;
+use Request;
 
 class ProfesorController extends Controller
 {
     public function index()
     {
-        $profesores = Profesor::all();
-        return view('profesores.listado', ["profesores" => $profesores]);
+        $profesores = Profesor::paginate(5);
+        $page = request::get('page')?? 1;
+        return view('profesores.listado', ["profesores" => $profesores, "page" => $page]);
     }
     public function create()
     {
@@ -32,11 +34,14 @@ class ProfesorController extends Controller
     }
     public function edit(int $id)
     {
+        $page= Request::get("page");
         $profesor = Profesor::find($id);
-        return view('profesores.editar', ["profesor" => $profesor]);
+        $page= Request::get("page");
+        return view('profesores.editar', ["profesor" => $profesor, "page" => $page]);
     }
     public function update(UpdateProfesorRequest $request, int $id)
     {
+        $page= Request::get("page");
         $profesor = Profesor::find($id);
         // recojo todos los inputs del formulario
         // $request es la solicitud que trae con ella un formulario con datos
@@ -44,18 +49,17 @@ class ProfesorController extends Controller
 
         $profesor->update($valores);  // actualizo el profesor que estoy editando y lo actualizo con los nuevos datos del formulario
 
-        $profesores = Profesor::all();  // recupero todos los datos del formulario
         session()->flash("status", "Se ha actualizado el profesor $profesor->nombre $profesor->apellido (id: $profesor->id).");
 
-        return view("profesores.listado", ["profesores" => $profesores]);  // entrego esos datos a la vista para que me lo muestre en una tabla
-
+        return redirect(route("profesores.index", ["page" => $page]));
     }
     public function destroy(int $id)
     {
+        $page= Request::get("page");
         $profesor = Profesor::find($id);
         $profesor->delete();
-        $profesores = Profesor::all();
+        $profesores = Profesor::paginate(5);
         session()->flash("status", "Se ha borrado el profesor $profesor->nombre $profesor->apellido.");
-        return view("profesores.listado", ["profesores" => $profesores]);
+        return view("profesores.listado", ["profesores" => $profesores,"page"=>$page]);
     }
 }

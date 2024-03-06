@@ -9,7 +9,7 @@ npm run dev
 php artisan serve &
 ```
 
-# Creando un CRUD para profesores (migración)
+# Creando un CRUD para profesores <!-- (migración) -->
 Creo un ecosistema
 ```bash
 php artisan make:model Profesor --all
@@ -38,30 +38,48 @@ Como el modelo se llama Profesor y la tabla quiero que se llame profesores en ve
 ## Creo la tabla
 En ProfesorFactory.php, hay que definir los campos para los diferentes parámetros dentro del return.
 
-## Modifico el ProfesorSeeder
-Añado dentro de $this ProfesorSeeder::class
+## Modifico el *ProfesorSeeder*
+Añado dentro de `$this`, `ProfesorSeeder::class`
 
 ## Ejecuto 
 ```bash
 php artisan migrate --seed
 ```
 
-# Crear una nueva migración
-```bash
-php artisan make:model Idioma --all
-```
-```bash
-php artisan migrate
-o
-php artisan migrate:fresh --seed (crea nuevos valores)
-```
-localhost:8080 (alumno alumno)
+# Cómo hacer una paginación (para profesores)
 
+### Dentro del archivo *ProfesorController.php*:
+* Añadimos `use Request;`
 
+* Dentro de la función **index**: 
+  * Cambiamos `$profesores = Profesor::all();` por `$profesores = Profesor::paginate(5);`
+  * Añadimos la variable `$page = request::get('page')?? 1;`
+  * Cambiamos el "return" por `return view('profesores.listado', ["profesores" => $profesores, "page" => $page]);`
 
+* Dentro de la función **edit**:
+  * Añadimos la variable `$page= Request::get("page");`
+  * Cambiamos el "return" por `return view('profesores.editar', ["profesor" => $profesor, "page" => $page]);`
 
+* Dentro de la función **update**:
+  * Añadimos la variable `$page= Request::get("page");`
+  * Eliminamos la variable `$profesores = Profesor::all();`
+  * Cambiamos el "return" por `return redirect(route("profesores.index", ["page" => $page]));`
 
-<!-- 
-```bash
-php artisan make:migration profesores --create=profesores
-``` -->
+* Dentro de la función **destroy**:
+  * Añadimos la variable `$page= Request::get("page");`
+  * Modificamos la variable `$profesores = Profesor::all();` por `$profesores = Profesor::paginate(5);`
+  * Cambiamos el "return" por `return view("profesores.listado", ["profesores" => $profesores,"page"=>$page]);`
+
+### Dentro del archivo *listado.blade.php*:
+* Añadimos al final del archivo, justo donde acaba la etiqueta de la tabla, los botones para navegar por las diferentes páginas. 
+  * Primero instalamos a través de la terminal: `npm install --save read-more-react`
+  * `{{$profesores->links("vendor.pagination.mipaginacion")}}`
+    * El archivo "vendor.pagination.mipaginacion" es uno que he creado a partir de los que salen por defecto de la instalación, ubicado en _**resources/views/vendor/pagination**_
+
+### Dentro de *editar.blade.php*:
+\<form action="{{route('profesores.update',[$profesor->id,'page'=>$page])}}" method="post">
+
+# Especificaciones
+IP: 8000
+
+`php artisan migrate:fresh --seed`  ⟶ Actualizar/refrescar la base de datos

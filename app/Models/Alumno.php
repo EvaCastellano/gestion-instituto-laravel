@@ -16,4 +16,8 @@ class Alumno extends Model
         'email'
 
     ];
+    public function idiomas()
+    {
+        return $this->hasMany(Idioma::class);
+    }
 }

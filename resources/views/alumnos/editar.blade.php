@@ -1,6 +1,6 @@
 <x-layouts.layout>
   <div class="flex text-black py-6 justify-center overflow-x-auto max-h-full">
-    <form action="{{route('alumnos.update',[$alumno->id,'page'=>$page])}}" method="post">  <!-- ERROR EN $page -->
+    <form action="{{route('alumnos.update',[$alumno->id,'page'=>$page])}}" method="post">
       @csrf
       @method("PUT")
       <label class="form-control w-full max-w-xs">
