@@ -5,8 +5,8 @@ use App\Http\Controllers\AlumnoController;
 use App\Http\Controllers\ProfesorController;
 
 Route::view("main", "main");
-
 Route::view("about", "about");
+Route::view("saludo", "saludo");
 
 Route::resource("alumnos", AlumnoController::class);
 Route::resource("profesores", ProfesorController::class);

@@ -6,3 +6,15 @@
   background-color: #ac92e4;
   cursor: pointer;
 }
+
+#enlace {
+  color: rgb(0, 62, 196);
+}
+
+#enlace:hover {
+  text-decoration: underline;
+}
+
+.nav {
+  background-color: #7C68A6;
+}

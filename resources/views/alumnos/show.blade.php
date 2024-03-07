@@ -13,10 +13,11 @@
       @foreach($alumno->idiomas as $idioma)
 <li>- {{$idioma->idioma}}</li>
       @endforeach
+      <a href="" id="enlace">Añadir idioma</a>
       </li>
     </ul>
     <div class="card-actions justify-end">
-      <a href="../alumnos" class="btn btn-square btn-outline text-white">Volver</a>
+      <a href="../alumnos" class="btn btn-square btn-outline text-white w-20">Volver</a>
     </div>
   </div>
 </div>

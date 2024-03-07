@@ -79,6 +79,11 @@ php artisan migrate --seed
 ### Dentro de *editar.blade.php*:
 \<form action="{{route('profesores.update',[$profesor->id,'page'=>$page])}}" method="post">
 
+# nsq
+Instalamos 3 paquetes: 
+
+
+Modificamos el fichero de configuracion vite.config.js añadiendo el nuevo plugin que vamos a utilizar de react
 # Especificaciones
 IP: 8000
 
