@@ -7,6 +7,10 @@
   cursor: pointer;
 }
 
+#td-hover-profes:hover {
+  background-color: #ac92e4;
+}
+
 #enlace {
   color: rgb(0, 62, 196);
 }

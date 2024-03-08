@@ -1,10 +1,10 @@
 <x-layouts.layout>
-  <div class="flex text-black py-6 justify-center overflow-x-auto max-h-full">
-    <form action="{{route('alumnos.update', [$alumno->id, 'page' => $page])}}" method="post">
+  <form action="{{route('alumnos.update', [$alumno->id, 'page' => $page])}}" method="post">
       @csrf
       @method("PUT")
-      <!-- NOMBRE -->
-      <label class="form-control w-full max-w-xs">
+<div class="flex w-full">
+  <div class="grid h-20 flex-grow place-items-center"><!-- NOMBRE -->
+      <label class="form-control  max-w-xs">
         <div class="label">
           <span class="label-text text-black">Nombre</span>
         </div>
@@ -35,6 +35,11 @@
         <input type="text" value="{{$alumno->telefono}}" name="telefono"
           class="input input-bordered w-full max-w-xs bg-nav rounded text-white" />
       </label>
+    </div>
+
+  <div class="divider divider-horizontal m-0 w-0 h-0"></div>
+
+  <div class="grid h-20 flex-grow place-items-center">
       <!-- EMAIL -->
       <label class="form-control w-full max-w-xs">
         <div class="label">
@@ -53,8 +58,7 @@
         <br>
         @endforeach
       </label>
-
-<!-- BOTON VOLVER -->
+      <!-- BOTON VOLVER -->
       <div class="flex items-center justify-end mt-4">
         <x-primary-button class="ms-4">
           {{ __('Volver (no)') }}
@@ -63,6 +67,7 @@
         <x-primary-button class="ms-4">
           {{ __('Editar') }}
         </x-primary-button>
+      </div>
       </div>
     </form>
   </div>

@@ -4,9 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AlumnoController;
 use App\Http\Controllers\ProfesorController;
 
-Route::view("main", "main");
+/* Route::view("main", "main"); */
 Route::view("about", "about");
-Route::view("saludo", "saludo");
+/* Route::view("saludo", "saludo"); */
+Route::get("main", \App\Http\Controllers\MainController::class);
 
 Route::resource("alumnos", AlumnoController::class);
 Route::resource("profesores", ProfesorController::class);

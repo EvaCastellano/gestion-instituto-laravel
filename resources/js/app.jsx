@@ -1,14 +1,26 @@
 import './bootstrap';
+// import 'Code.jsx';
 
-import React from 'react';
-import Saludo from "./Pages/Saludo.jsx";
-
+import React from "react";
 import {createRoot} from "react-dom/client";
 
+import Saludo from "./Pages/Saludo.jsx";
+import Numero from "./Pages/Numero.jsx";
+import ListadoAlumnos from "./Pages/ListadoAlumnos.jsx";
 
-const main_element = document.getElementById("root");
+const react_numero = document.getElementById("react-numero");
+const react_saludo = document.getElementById("react-saludo");
+const react_listado_alumnos = document.getElementById("react-alumnos");
 
+if (react_listado_alumnos){
+  const listadoAlumnos = react_listado_alumnos.getAttribute("alumnos");
+  createRoot(react_listado_alumnos).render(<ListadoAlumnos listadoAlumnos={listadoAlumnos}/>);
+}
 
-const root = createRoot(main_element);
+if (react_numero){
+const numero = react_numero.getAttribute("numero");
+    createRoot(react_numero).render(<Numero numero={numero}/>);
+}
 
-root.render(<Saludo />);
+if (react_saludo)
+    createRoot(react_saludo).render(<Saludo />);

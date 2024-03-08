@@ -16,7 +16,7 @@
 
             <!-- Password -->
             <div class="mt-4">
-                <x-input-label for="password" :value="__('Password')" />
+                <x-input-label for="password" :value="__('Contraseña')" />
 
                 <x-text-input id="password" class="block mt-1 w-full" type="password" name="password" required
                     autocomplete="current-password" />
@@ -26,24 +26,24 @@
 
             <!-- Remember Me -->
             <div class="block mt-4">
-                <label for="remember_me" class="inline-flex items-center">
+                <label for="remember_me" class="inline-flex items-center text-black">
                     <input id="remember_me" type="checkbox"
                         class=" rounded dark:bg-nav-900 bg-nav-300 dark:bg-nav-700 text-indigo-600 shadow-sm focus:ring-indigo-500 dark:focus:ring-indigo-600 dark:focus:ring-offset-gray-800"
                         name="remember">
-                    <span class="ms-2 text-sm text-white-600 dark:text-white-400 ">{{ __('Remember me') }}</span>
+                    <span class="ms-2 text-sm text-white-600 dark:text-white-400 ">{{ __('Recuerdame') }}</span>
                 </label>
             </div>
 
-            <div class="flex items-center justify-end mt-4">
+            <div class="flex items-center justify-end mt-4 text-black">
                 @if (Route::has('password.request'))
                 <a class="underline text-sm text-white-600 dark:text-white-400 hover:text-red-900 dark:hover:text-red-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-white-800"
                     href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
+                    {{ __('¿Olvidaste tu contraseña?') }}
                 </a>
                 @endif
 
                 <x-primary-button class="ms-3">
-                    {{ __('Log in') }}
+                    {{ __('Iniciar sesión') }}
                 </x-primary-button>
             </div>
         </form>
