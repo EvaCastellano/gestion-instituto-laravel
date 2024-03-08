@@ -1,4 +1,5 @@
 <x-layouts.layout>
+<<<<<<< HEAD
 <div class="flex text-black py-6 justify-center overflow-x-auto max-h-full">
 <form action="/alumnos" method="post">
   <label class="form-control w-full max-w-xs" >
@@ -41,6 +42,9 @@
 
 <!-- 
   <div class="flex text-black py-6 justify-center">
+=======
+  <div class="flex text-black py-6 justify-center">  <!-- h-full flex justify-center items-center -->
+>>>>>>> 380d64fce8d98ddff355c5747e59efe455864f4c
     <form action="/alumnos" method="post">
       @csrf
       <div class="py-1">
@@ -81,4 +85,9 @@
       <input class="btn btn-primary" type="submit" value="Crear">
     </form>
   </div>
+<<<<<<< HEAD
  -->
+=======
+  
+</x-layouts.layout>
+>>>>>>> 380d64fce8d98ddff355c5747e59efe455864f4c

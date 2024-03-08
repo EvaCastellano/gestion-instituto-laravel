@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Alumno;
+<<<<<<< HEAD
 use App\Models\Idioma;
 
 class AlumnoSeeder extends Seeder
@@ -38,5 +39,17 @@ class AlumnoSeeder extends Seeder
                 $idioma->save();
             }
         });
+=======
+
+class AlumnoSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        Alumno::factory()->count(100)->create();
+        //
+>>>>>>> 380d64fce8d98ddff355c5747e59efe455864f4c
     }
 }

@@ -6,9 +6,18 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateAlumnoRequest extends FormRequest
 {
+<<<<<<< HEAD
     public function authorize(): bool
     {
         return true;
+=======
+    /**
+     * Determine if the user is authorized to make this request.
+     */
+    public function authorize(): bool
+    {
+        return false;
+>>>>>>> 380d64fce8d98ddff355c5747e59efe455864f4c
     }
 
     /**
