@@ -30,7 +30,7 @@
       </thead>
       @foreach($profesores as $profesor)
       <tbody class="text-black">
-        <tr id="td-hover-profes">
+        <tr id="td-hover">
           <td class="font-semibold">{{$profesor->nombre}}</td>
           <td>{{$profesor->apellido}}</td>
           <td>{{$profesor->dni}}</td>

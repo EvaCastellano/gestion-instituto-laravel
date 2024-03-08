@@ -79,47 +79,11 @@ php artisan migrate --seed
 ### Dentro de *editar.blade.php*:
 \<form action="{{route('profesores.update',[$profesor->id,'page'=>$page])}}" method="post">
 
-# Instalar React en Laravel
+# nsq
 Instalamos 3 paquetes: 
-  ```bash
-  npm install --save-dev @vitejs/plugin-react
-  npm install react@latest react-dom@latest 
-  ```
 
 
 Modificamos el fichero de configuracion vite.config.js añadiendo el nuevo plugin que vamos a utilizar de react
-````js
-//.....
-import react from "@vitejs/plugin-react"
-
-
-export default defineConfig({
-plugins: [
-        react(),
-        laravel({
-            // .....
-        }),
-],
-});
-````
-
-Importamos la librería de react en app.jsx
-
-````js
-import './bootstrap';
-
-import React from "react";
-import {createRoot} from "react-dom/client";
-
-````
-
-Ahora en la plantilla general especificamos a vite que cage app.jsx
-
-```blade
-@viteReactRefresh
-@vite(["resources/css/app.css", "resources/js/app.jsx"])
-```
-
 # Especificaciones
 IP: 8000
 

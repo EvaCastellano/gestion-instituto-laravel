@@ -3,8 +3,8 @@
   <h1 class="text-5xl py-5">Gestión Laravel</h1>
   @guest
   <div class="space-x-2 py-5">
-    <a href="login" class="btn glass text-white">Iniciar sesión</a>
-    <a href="register" class="btn glass text-white">Registrarse</a>
+    <a href="login" class="btn glass text-white">Log in</a>
+    <a href="register" class="btn glass text-white">Register</a>
   </div>
   @endguest
   @auth

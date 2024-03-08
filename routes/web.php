@@ -2,11 +2,9 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AlumnoController;
-<<<<<<< HEAD
-use App\Http\Controllers\ProfesorController;
 
 /* Route::view("main", "main"); */
-=======
+
 
 Route::view("main", "main");
 /* Route::get("main", function () {
@@ -15,10 +13,11 @@ Route::view("main", "main");
 Route::get("main", [MainController::class => "index"]);
 
  */
->>>>>>> 380d64fce8d98ddff355c5747e59efe455864f4c
+
+Route::view("main", "main");
+
 Route::view("about", "about");
-/* Route::view("saludo", "saludo"); */
-Route::get("main", \App\Http\Controllers\MainController::class);
+Route::view("saludo", "saludo");
 
 Route::resource("alumnos", AlumnoController::class);
 Route::resource("profesores", ProfesorController::class);
