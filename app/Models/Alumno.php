@@ -1,9 +1,12 @@
 <?php
 
+
 namespace App\Models;
+
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+
 
 class Alumno extends Model
 {
@@ -14,7 +17,7 @@ class Alumno extends Model
         'direccion',
         'telefono',
         'email'
-<<<<<<< HEAD
+
 
     ];
     public function idiomas()
@@ -22,7 +25,3 @@ class Alumno extends Model
         return $this->hasMany(Idioma::class);
     }
 }
-=======
-    ];
-}
->>>>>>> 380d64fce8d98ddff355c5747e59efe455864f4c
